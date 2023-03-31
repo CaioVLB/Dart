@@ -45,10 +45,24 @@ class Retangulo extends Figura {
   String toString() {
 
     return '''
-      ----- Retângulo -----
-      lado 1: ${this._lado1}
-      lado 2: ${this._lado2}
-      área: ${this.area()}
+      ======================
+
+      lado 1: ${this._lado1} / lado 2: ${this._lado2} / área do RETÂNGULO: ${this.area()}
+
+      ======================
+    ''';
+  }
+}
+
+class Quadrado extends Retangulo {
+
+  Quadrado(double lado, String cor) : super(lado, lado, cor);
+
+  String toString() {
+    return '''
+      =====================
+      lados: ${this.lado1} / área do QUADRADO: ${this.area()}
+      =====================
     ''';
   }
 }
@@ -74,10 +88,11 @@ class Circulo extends Figura {
 
   String toString() {
     return '''
-      ----- Círculo -----
-      raio: ${this.getRaio()}
-      diâmetro: ${this.getDiametro()}
-      área: ${this.area()}
+      =====================
+
+      raio: ${this.getRaio()} / diâmetro: ${this.getDiametro()} / área do CIRCULO: ${this.area()}
+
+      =====================
     ''';
   }
 }
@@ -104,33 +119,21 @@ class Triangulo extends Figura {
 
   String toString() {
     return '''
-      ----- Triângulo -----
-      base: ${this._base}
-      altura: ${this._altura}
-      área: ${this.area()}
-    ''';
-  }
-}
+      =====================
 
-class Quadrado extends Retangulo {
+      base: ${this._base} / altura: ${this._altura} / área do TRIÂNGULO: ${this.area()}
 
-  Quadrado(double lado, String cor) : super(lado, lado, cor);
-
-  String toString() {
-    return '''
-      ----- Quadrado -----
-      lados: ${this.lado1}
-      área: ${this.area()}
+      =====================
     ''';
   }
 }
 
 void main(List<String> args) {
 
-  Retangulo retangulo = Retangulo(2, 3, "vermelho");
-  Triangulo triangulo = Triangulo(2, 3, "azul");
-  Circulo circulo = Circulo(2, "verde");
-  Quadrado quadrado = Quadrado(2, "preto");
+  Retangulo retangulo = Retangulo(6, 3, "Azul");
+  Triangulo triangulo = Triangulo(6, 3, "Laranja");
+  Circulo circulo = Circulo(6, "Vermelho");
+  Quadrado quadrado = Quadrado(6, "Verde");
 
   print(retangulo.toString());
   print(triangulo.toString());
